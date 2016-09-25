@@ -1,7 +1,3 @@
-#Flatfy - Theme | New Version!
+#Computing Laboratory Website
 
-##Responsive Mobile & Flat Design 
-Own Carousel & Bootstrap Framework CSS 
-Font Icon Svg & Animate
-
-Theme made by [Andrea Galanti](http://www.andreagalanti.it/flatfy.php)
+this project belongs to computing laboratory in telkom university
