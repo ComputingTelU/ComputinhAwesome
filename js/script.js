@@ -42,11 +42,17 @@ $(document).ready(function() {
 			itemsDesktopSmall : [979,1]
 		});
 
-        $("#owl-photos").owlCarousel({
-            items : 1,
-            itemsDesktop : [1199,1],
-            itemsDesktopSmall : [979,1]
-        });
+	$("#owl-photos").owlCarousel({
+		items : 1,
+		itemsDesktop : [1199,1],
+		itemsDesktopSmall : [979,1]
+	});
+
+	$("#owl-post").owlCarousel({
+		items : 3,
+		itemsDesktop : [1199,2],
+		itemsDesktopSmall : [979,1]
+	});
 
     $("#owl-photos-1").owlCarousel({
         items : 1,

@@ -46,6 +46,13 @@
 		<script src="js/html5shiv.js"></script>
 	<![endif]-->
 
+    <!--angular js palih dieu-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+
 </head>
 
 <body id="home" ng-app="App">
@@ -94,10 +101,9 @@
 			<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
 
-					<li class="menuItem"><a href="#whatis">What is?</a></li>
-					<li class="menuItem"><a href="#useit">Use It</a></li>
-					<li class="menuItem"><a href="#screen">Screenshot</a></li>
-					<li class="menuItem"><a href="#credits">Credits</a></li>
+                    <li class="menuItem"><a href="#kami">Tentang kami</a></li>
+                    <li class="menuItem"><a href="#whatis">Kegiatan</a></li>
+					<li class="menuItem"><a href="#screen">Pengurus</a></li>
 					<li class="menuItem"><a href="#contact">Contact</a></li>
 				</ul>
 			</div>
@@ -106,7 +112,7 @@
 	</nav>
 
     <!-- Use it -->
-    <div id ="useit" class="content-section-a">
+    <div id ="kami" class="content-section-a">
 
         <div class="container">
 
@@ -375,7 +381,7 @@
                 <div class="modal-body">
                     <div class="owl-carousel" id="owl-responsi">
                         <div class="item">
-                            <h4>Responsi DAA(Desain Analissi Algoritma</h4>
+                            <h4>Responsi DAA (Desain Analissi Algoritma)</h4>
                             <p>Responsi adalah suatu kegiatan pendalaman materi
                                 ataupun review materi diluar jam perkuliahan yang
                                 biasanya dipandu oleh mahasiswa ataupun dosen
@@ -504,46 +510,44 @@
                   <div class="item pengurus">
                     <div class="foto-pengurus gia"></div>
                       <h4><i>"Join us and let's learn together with the members!"</i></h4>
-                      <p class="lead">Gia Septiana, Laboratory Adviser.</p>
+                      <p class="lead">Gia Septiana, Pembina Lab.</p>
                   </div>
 
                   <div class="item pengurus">
                       <div class="foto-pengurus tisa"></div>
                       <h4><i>"Never too late to try, just do it"</i></h4>
-                      <p class="lead">Tisa Siti Sa'adah, Laboratory Adviser.</p>
+                      <p class="lead">Tisa Siti Sa'adah, Pembina Lab.</p>
                   </div>
 
                   <div class="item pengurus">
                       <div class="foto-pengurus lilin"></div>
                       <h4><i>"RUN!"</i></h4>
-                      <p class="lead">Lilin, Laboratory Assistant </p>
+                      <p class="lead">Lilin, Asisten Lab. </p>
                   </div>
 
                   <div class="item pengurus">
                       <div class="foto-pengurus ipad"></div>
                       <h4><i>"Bergerak atau Tergantikan"</i></h4>
-                      <p class="lead">Febrian Imanda Effendy, Laboratory Assistant.</p>
+                      <p class="lead">Febrian Imanda Effendy, Asisten Lab.</p>
                   </div>
 
                   <div class="item pengurus">
                       <div class="foto-pengurus hafi"></div>
                       <h4><i>"All the world is a laboratory to the inquiring mind" - Martin H. Fischer</i></h4>
-                      <p class="lead">Hafidz SA, Laboratory Assistant.</p>
+                      <p class="lead">Hafidz SA, Asisten Lab.</p>
                   </div>
 
                   <div class="item pengurus">
                       <div class="foto-pengurus azmi"></div>
                       <h4><i>"Nothing worth having comes easy"</i></h4>
-                      <p class="lead">Azmi Hafizha, Laboratory Assistant.</p>
+                      <p class="lead">Azmi Hafizha, Asisten Lab.</p>
                   </div>
 
                   <div class="item pengurus">
                       <div class="foto-pengurus nur"></div>
                       <h4><i>"Enough hooman for today"</i></h4>
-                      <p class="lead">Satria Nur H, Laboratory Assistant.</p>
+                      <p class="lead">Satria Nur H, Asisten Lab.</p>
                   </div>
-
-
               </div>       
           </div>
         </div>
@@ -556,7 +560,7 @@
 			<div class="row">
 			<div class="col-md-6 col-md-offset-3 text-center white">
 				<h2>Gabung Bersama Kami</h2>
-                <p class="lead">Nantikan informasi mengenai rekruitasi</p>
+                <p class="lead">Nantikan informasi berikutnya mengenai rekruitasi</p>
             </div>
                 <div class="col-md-6 col-md-offset-3 text-center">
                 <div class="mockup-content">
@@ -584,14 +588,30 @@
 	<div id="downloadlink" class="banner">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 col-md-offset-3 text-center wrap_title">
-				<h2>Keluarga</h2>
-				<p class="lead" style="margin-top:0"></p>
-				<!--<p><a class="btn btn-embossed btn-primary view" role="button">Free Download</a></p>-->
+                <div class="col-md-6 col-md-offset-3 text-center wrap_title">
+                    <h2>Keluarga</h2>
+                    <p class="lead" style="margin-top:0"></p>
 			 </div>
 			</div>
 		</div>
 	</div>
+
+    <div class="content-section-c" ng-controller="Ctrl">
+        <div class="container">
+            <div class="col-md-6 col-md-offset-3 text-center white">
+                <h2>Blog</h2>
+                <p class="lead">Simak informasi terbaru kami</p>
+            </div>
+            <div class="row wow bounceInUp">
+                <div class="owl-carousel" id="owl-post">
+                    <div class="item card post" ng-repeat="post in posts">
+                        <!--<img class="center-cropped" style="background-image: url('img/intro/intro4.jpg');" >-->
+                        <h4>{{post.title}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	
 	<!-- Contact -->
 	<div id="contact" class="content-section-a">
@@ -607,7 +627,7 @@
 					<div class="form-group">
 						<label for="InputName">Nama anda</label>
 						<div class="input-group">
-							<input type="text" class="form-control" name="InputName" id="InputName" placeholder="Masukkan Name" required>
+							<input type="text" class="form-control" name="InputName" id="InputName" placeholder="Masukkan Nama" required>
 							<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
 						</div>
 					</div>
@@ -637,18 +657,20 @@
 					<address>
 					<h3>Lab Kami Berada di</h3>
 					<p class="lead"><br>
-					Ruang IF2.01.01, Kultubai Utara
-					Telkom Universty
-					Jalan Telekomunikasi Terusan Buah Batu
-                    Bandung 40257 Indonesia</p>
+					    Ruang IF2.01.01,
+                        Gedung Kultubai Utara,
+                        Fakultas Informatika,
+                        Telkom Universty
+					    Jalan Telekomunikasi Terusan Buah Batu
+                        Bandung 40257 Indonesia</p>
 					</address>
 
 					<h3>Media Sosial</h3>
 					<li class="social"> 
-					<a href="#"><i class="fa fa-facebook-square fa-size"> </i></a>
-					<a href="#"><i class="fa  fa-twitter-square fa-size"> </i> </a>
-					<a href="#"><i class="fa fa-google-plus-square fa-size"> </i></a>
-					<a href="#"><i class="fa fa-flickr fa-size"> </i> </a>
+					<a href="https://www.facebook.com/telkomuniversity.computing.lab/"><i class="fa fa-facebook-square fa-size"> </i></a>
+					<!--<a href="#"><i class="fa  fa-twitter-square fa-size"> </i> </a>-->
+					<!--<a href="#"><i class="fa fa-google-plus-square fa-size"> </i></a>-->
+					<!--<a href="#"><i class="fa fa-flickr fa-size"> </i> </a>-->
 					</li>
 				</div>
 			</div>
@@ -689,6 +711,8 @@
     <script src="js/uiMorphingButton_inflow.js"></script>
     <!-- Magnific Popup core JS file -->
     <script src="js/jquery.magnific-popup.js"></script>
+
+    <script src="js/aplikasi.js"></script>
 </body>
 
 </html>
