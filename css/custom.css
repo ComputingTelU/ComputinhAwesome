@@ -517,11 +517,12 @@ NO MORE TABLES!! ;)
 }
 
 .post{
-    margin: 10px auto;
+    margin: 10px 10px;
     height: 500px;
     width: 350px;
     text-align: left;
     padding: 10px 15px 10px 20px;
+    display: inline-block;
 }
 
 .center-cropped {
@@ -531,6 +532,22 @@ NO MORE TABLES!! ;)
     background-size: 350px;
 }
 
+.blog-section{
+	overflow-x: scroll;
+	overflow-y: hidden;
+	height: 600px;
+	width: 100%;
+	white-space: nowrap;
+}
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #2c3e50;
+
+}
 
 
 

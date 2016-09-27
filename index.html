@@ -4,7 +4,6 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--> <html> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
@@ -15,22 +14,22 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
- 
+
     <!-- Custom Google Web Font -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
-	
+
     <!-- Custom CSS-->
     <link href="css/general.css" rel="stylesheet">
-	
+
 	 <!-- Owl-Carousel -->
     <link href="css/custom.css" rel="stylesheet">
 	<link href="css/owl.carousel.css" rel="stylesheet">
     <link href="css/owl.theme.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/animate.css" rel="stylesheet">
-	
+
 	<!-- Magnific Popup core CSS file -->
 	<link rel="stylesheet" href="css/magnific-popup.css">
 
@@ -41,17 +40,19 @@
 	<!--[if lt IE 9]>
 		<script src="js/PIE_IE678.js"></script>
 	<![endif]-->
-
 	<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
 	<![endif]-->
 
-    <!--angular js palih dieu-->
+    <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <!-- Firebase -->
-    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <!-- AngularFire -->
-    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+    <!--aplikasi ku-->
+    <script src="js/aplikasi.js"></script>
+
 
 </head>
 
@@ -61,7 +62,7 @@
 	<div id="preloader">
 		<div id="status"></div>
 	</div>
-	
+
 	<!-- FullScreen -->
     <div class="intro-header">
 		<div class="col-xs-12 text-center abcen1">
@@ -71,10 +72,10 @@
 				<li><a href="#" class="btn  btn-lg mybutton_cyano wow fadeIn" data-wow-delay="0.8s"><span class="network-name">Find Out</span></a>
 				</li>
 			</ul>
-		</div>    
+		</div>
         <!-- /.container -->
 		<div class="col-xs-12 text-center abcen wow fadeIn">
-			<div class="button_down "> 
+			<div class="button_down ">
 				<a class="imgcircle wow bounceInUp" data-wow-duration="1.5s"  href="#whatis"> <img class="img_scroll" src="img/icon/circle.png" alt=""> </a>
 			</div>
 		</div>
@@ -438,7 +439,7 @@
         </div>
     </div>
 
-	
+
 	<!-- What is -->
 	<div id="whatis" class="content-section-b" style="border-top: 0">
 		<div class="container">
@@ -446,9 +447,9 @@
 			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
 				<h2>Kegiatan</h2>
 				<p class="lead" style="margin-top:0">Berikut adalah kegiatan kami</p>
-				
+
 			</div>
-			
+
 			<div class="row">
 				<div class="col-sm-4 wow fadeInDown text-center">
                     <img class="rotate" style="height: 100px; width: 100px" src="img/icon2/reading.svg" alt="Generic placeholder image">
@@ -456,14 +457,14 @@
                     <p class="lead">salah satuprogram rutin pertama bagi anggota baru laboratorium Computing yang merupakan mahasiswa Fakultas Informatika tingkat dua.</p>
                     <p><a data-target="#modalsg" data-toggle="modal" class="btn btn-embossed btn-primary view" role="button">Selengkapnya</a></p>
 				</div><!-- /.col-lg-4 -->
-				
+
 				<div class="col-sm-4 wow fadeInDown text-center">
 				  <img  class="rotate" style="height: 100px; width: 100px" src="img/icon2/chemistry.svg" alt="Generic placeholder image">
 				   <h3>Study Group Advance</h3>
 				   <p class="lead">bisa dibilang merupakan tingkat lanjutan dari Study Group, namun kemandirian dari sistem pembelajaran anggotanya menjadi perbedaan utama antara Study Group Advance dengan Study Group.</p>
 				    <p><a data-target="#modalsga" data-toggle="modal" class="btn btn-embossed btn-primary view" role="button">Selengkapnya</a></p>
 				</div><!-- /.col-lg-4 -->
-				
+
 				<div class="col-sm-4 wow fadeInDown text-center">
 				  <img  class="rotate" style="height: 100px; width: 100px" src="img/icon2/presentation.svg" alt="Generic placeholder image">
 				   <h3>Pelatihan</h3>
@@ -548,7 +549,7 @@
                       <h4><i>"Enough hooman for today"</i></h4>
                       <p class="lead">Satria Nur H, Asisten Lab.</p>
                   </div>
-              </div>       
+              </div>
           </div>
         </div>
 
@@ -583,7 +584,7 @@
 			</div>>
 		</div>
 	</div>
-	
+
 	<!-- Banner Download -->
 	<div id="downloadlink" class="banner">
 		<div class="container">
@@ -603,21 +604,23 @@
                 <p class="lead">Simak informasi terbaru kami</p>
             </div>
             <div class="row wow bounceInUp">
-                <div class="owl-carousel" id="owl-post">
-                    <div class="item card post" ng-repeat="post in posts">
+                <div class="blog-section" ng-show="blogvisible">
+                    <div class="card post" ng-repeat="po in posts">
                         <!--<img class="center-cropped" style="background-image: url('img/intro/intro4.jpg');" >-->
-                        <h4>{{post.title}}</h4>
+                        <h4>{{po.tittle}}</h4>
+                        <p>{{po.content}}</p>
                     </div>
                 </div>
+                <!--<button ng-click="coba()" class="btn btn-primary">Coba</button>-->
             </div>
         </div>
     </div>
-	
+
 	<!-- Contact -->
 	<div id="contact" class="content-section-a">
 		<div class="container">
 			<div class="row">
-			
+
 			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
 				<h2>Hubungi Kami</h2>
 			</div>
@@ -651,7 +654,7 @@
 					<input type="submit" name="submit" id="submit" value="Submit" class="btn wow tada btn-embossed btn-primary pull-right">
 				</div>
 			</form>
-			
+
 			<hr class="featurette-divider hidden-lg">
 				<div class="col-md-5 col-md-push-1 address">
 					<address>
@@ -666,7 +669,7 @@
 					</address>
 
 					<h3>Media Sosial</h3>
-					<li class="social"> 
+					<li class="social">
 					<a href="https://www.facebook.com/telkomuniversity.computing.lab/"><i class="fa fa-facebook-square fa-size"> </i></a>
 					<!--<a href="#"><i class="fa  fa-twitter-square fa-size"> </i> </a>-->
 					<!--<a href="#"><i class="fa fa-google-plus-square fa-size"> </i></a>-->
@@ -676,9 +679,9 @@
 			</div>
 		</div>
 	</div>
-	
-	
-	
+
+
+
     <footer>
       <div class="container">
 
@@ -696,13 +699,13 @@
 	  jQuery(function($) {
 		$(document).ready( function() {
 		  $('.navbar-default').stickUp();
-		  
+
 		});
 	  });
-	
+
 	</script>
 	<!-- Smoothscroll -->
-	<script type="text/javascript" src="js/jquery.corner.js"></script> 
+	<script type="text/javascript" src="js/jquery.corner.js"></script>
 	<script src="js/wow.min.js"></script>
 	<script>
     new WOW().init();
@@ -712,7 +715,6 @@
     <!-- Magnific Popup core JS file -->
     <script src="js/jquery.magnific-popup.js"></script>
 
-    <script src="js/aplikasi.js"></script>
 </body>
 
-</html>
+</ht

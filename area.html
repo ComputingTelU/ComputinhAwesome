@@ -1,0 +1,60 @@
+<html>
+<head>
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+    <!--Angular route-->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+    <!--app-->
+    <script src="js/panelapp.js"></script>
+
+    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--costum css-->
+    <link rel="stylesheet" href="css/panelcustom.css">
+</head>
+
+<body ng-app="App" ng-cloak="">
+
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <!--<div class="mdl-layout__header-row">-->
+                <!--&lt;!&ndash; Title &ndash;&gt;-->
+                <!--<span class="mdl-layout-title">Title</span>-->
+                <!--&lt;!&ndash; Add spacer, to align navigation to the right &ndash;&gt;-->
+                <!--<div class="mdl-layout-spacer"></div>-->
+                <!--&lt;!&ndash; Navigation. We hide it in small screens. &ndash;&gt;-->
+                <!--<nav class="mdl-navigation mdl-layout&#45;&#45;large-screen-only">-->
+                    <!--<a class="mdl-navigation__link" href="">Link</a>-->
+                    <!--<a class="mdl-navigation__link" href="">Link</a>-->
+                    <!--<a class="mdl-navigation__link" href="">Link</a>-->
+                    <!--<a class="mdl-navigation__link" href="">Link</a>-->
+                <!--</nav>-->
+            <!--</div>-->
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Panel</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="#blog">Blog</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content" ng-view>
+            </div>
+        </main>
+    </div>
+
+
+</body>
+
+</html>
