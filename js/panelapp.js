@@ -77,9 +77,16 @@ app.controller("LoginCtrl",function ($scope,$firebaseAuth,$location,currentAuth)
 
 });
 
-app.controller("PostCtrl",function ($scope,currentAuth) {
+app.controller("PostCtrl",function ($scope,currentAuth,$firebaseArray) {
     $scope.saha = currentAuth;
-
+    var rootref = firebase.database().ref().child('posts');
+    var posts =  $firebaseArray(rootref);
+    posts.$loaded(
+        function () {
+            $scope.posts = posts;
+            console.log(posts);
+        }
+    );
 });
 
 app.factory("Auth", ["$firebaseAuth",

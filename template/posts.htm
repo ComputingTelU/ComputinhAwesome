@@ -1,30 +1,40 @@
 <div class="mdl-grid">
     <div class="mdl-cell mdl-cell--4-col">
-        <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp" style="width: 100%;">
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
             <thead>
             <tr>
-                <th>Post</th>
-                <th>Unit price</th>
+                <th class="mdl-data-table__cell--non-numeric">Title</th>
+                <th class="mdl-data-table__cell--non-numeric">Content</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>25</td>
-                <td>$2.90</td>
-            </tr>
-            <tr>
-                <td>50</td>
-                <td>$1.25</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>$2.35</td>
+            <tr ng-repeat="p in posts">
+                <td class="mdl-data-table__cell--non-numeric">{{p.tittle}}</td>
+                <td class="mdl-data-table__cell--non-numeric">{{p.content}}</td>
             </tr>
             </tbody>
         </table>
 
     </div>
-    <div class="mdl-cell mdl-cell--4-col"></div>
+    <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="sample3">
+            <label class="mdl-textfield__label" for="sample3">Title</label>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield">
+            <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+            <label class="mdl-textfield__label" for="sample5">Content</label>
+        </div>
+
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Add
+        </button>
+
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Edit
+        </button>
+    </div>
     <div class="mdl-cell mdl-cell--4-col"></div>
 
 </div>
