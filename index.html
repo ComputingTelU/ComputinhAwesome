@@ -46,12 +46,17 @@
 
     <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <!-- AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
     <!--aplikasi ku-->
     <script src="js/aplikasi.js"></script>
+    <!--untuk angular ui -->
+    <!-- <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <!-- <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css"> -->
 
 
 </head>
@@ -605,10 +610,13 @@
             </div>
             <div class="row wow bounceInUp">
                 <div class="blog-section" ng-show="blogvisible">
-                    <div class="card post" ng-repeat="po in posts">
-                        <!--<img class="center-cropped" style="background-image: url('img/intro/intro4.jpg');" >-->
+                    <div class="post" ng-repeat="po in posts">
+                        <!-- <img class="center-cropped" style="background-image: url('img/intro/intro4.jpg');" > -->
                         <h4>{{po.tittle}}</h4>
-                        <p>{{po.content}}</p>
+                        <div ng-bind-html="(po.content | Summ)">
+                          <!-- {{po.content | Summ}} -->
+                        </div>
+                        <button ng-click="bacalengkap(po)" class="btn btn-primary">Selengkapnya</button>
                     </div>
                 </div>
                 <!--<button ng-click="coba()" class="btn btn-primary">Coba</button>-->
@@ -717,4 +725,4 @@
 
 </body>
 
-</ht
+</html>

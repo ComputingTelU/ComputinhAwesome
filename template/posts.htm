@@ -1,40 +1,46 @@
 <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--4-col">
-        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%;">
+    <div class="mdl-cell mdl-cell--8-col">
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp table-postingan" >
             <thead>
             <tr>
                 <th class="mdl-data-table__cell--non-numeric">Title</th>
                 <th class="mdl-data-table__cell--non-numeric">Content</th>
+                <th class="mdl-data-table__cell--non-numeric"></th>
             </tr>
             </thead>
             <tbody>
             <tr ng-repeat="p in posts">
                 <td class="mdl-data-table__cell--non-numeric">{{p.tittle}}</td>
-                <td class="mdl-data-table__cell--non-numeric">{{p.content}}</td>
+                <td class="mdl-data-table__cell--non-numeric">{{p.content | Summ}}</td>
+                <td class="mdl-data-table__cell--non-numeric">
+                    <button type="button" class="mdl-chip">
+                        <span class="mdl-chip__text" ng-click="posts.$remove(p)">Delete</span>
+                    </button>
+                    <button type="button" class="mdl-chip">
+                        <span class="mdl-chip__text" ng-click="selecteditPost(p)">Edit</span>
+                    </button>
+                </td>
+
             </tr>
             </tbody>
         </table>
 
     </div>
     <div class="mdl-cell mdl-cell--4-col">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="sample3">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%">
+            <input class="mdl-textfield__input" ng-model="post.tittle" type="text" id="sample3">
             <label class="mdl-textfield__label" for="sample3">Title</label>
         </div>
 
-        <div class="mdl-textfield mdl-js-textfield">
-            <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
-            <label class="mdl-textfield__label" for="sample5">Content</label>
+        <div style="margin-bottom: 20px; width: 100%">
+            <textarea ui-tinymce="tinyMceOpt" ng-model="post.content" type="text" rows= "5" id="eusi" ></textarea>
         </div>
-
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        <button ng-click="addPost(post)" ng-show="addmode" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
             Add
         </button>
-
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        <button ng-click="editPost()" ng-show="editmode" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
             Edit
         </button>
     </div>
-    <div class="mdl-cell mdl-cell--4-col"></div>
 
 </div>

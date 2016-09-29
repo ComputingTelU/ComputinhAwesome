@@ -1,4 +1,4 @@
-var app = angular.module("App",['firebase']);
+var app = angular.module("App",['firebase','ngSanitize','ui.bootstrap']);
 
 var config = {
     apiKey: "AIzaSyB-UAD6SUv9Cv7QyjyVCv9cLEFb1Y9lqrQ",
@@ -9,7 +9,15 @@ var config = {
 };
 firebase.initializeApp(config);
 
-app.controller('Ctrl',function ($scope,$firebaseArray) {
+// app.run(function ($rootScope,$timeout) {
+//     $rootScope.$on('$viewContentLoaded', function(){
+//         $timeout(function() {
+//             componentHandler.upgradeAllRegistered();
+//         })
+//     })
+// });
+
+app.controller('Ctrl',function ($scope,$firebaseArray,$sce,$uibModal) {
     var rootref = firebase.database().ref().child('posts');
     $scope.blogvisible = false;
     $scope.posts = [
@@ -35,13 +43,27 @@ app.controller('Ctrl',function ($scope,$firebaseArray) {
         }
     );
 
-    $scope.coba = function () {
-        var postData = {
-            tittle:".Meong",
-            content:"Yoi"
-        };
-        $scope.posts.$add(postData);
+    var bacacontroller = function ($scope,post,$sce) {
+        $scope.isinya = post;
     };
-    
 
+    $scope.bacalengkap = function (_selectedpost) {
+        var modalinstance  = $uibModal.open({
+            size:'lg',
+            templateUrl:'/readmore.htm',
+            controller: bacacontroller,
+            resolve:{
+                post:function () {
+                    return _selectedpost;
+                }
+            }
+        });
+    };
+
+});
+
+app.filter("Summ",function () {
+    return function (input) {
+        return input.substr(0,500)+"...";
+    }
 });

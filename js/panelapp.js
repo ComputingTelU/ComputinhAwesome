@@ -1,4 +1,4 @@
-var app = angular.module('App',['ngRoute','firebase']);
+var app = angular.module('App',['ngRoute','firebase','ui.tinymce']);
 
 var config = {
     apiKey: "AIzaSyB-UAD6SUv9Cv7QyjyVCv9cLEFb1Y9lqrQ",
@@ -81,12 +81,35 @@ app.controller("PostCtrl",function ($scope,currentAuth,$firebaseArray) {
     $scope.saha = currentAuth;
     var rootref = firebase.database().ref().child('posts');
     var posts =  $firebaseArray(rootref);
+    $scope.addmode = true;
+    $scope.editmode = false;
     posts.$loaded(
         function () {
             $scope.posts = posts;
             console.log(posts);
         }
     );
+    $scope.addPost = function (post) {
+        console.log(post);
+        $scope.post = null;
+        posts.$add(post);
+    };
+    $scope.selecteditPost = function (selected) {
+        $scope.post = selected;
+        $scope.addmode = false;
+        $scope.editmode = true;
+    };
+    $scope.editPost = function () {
+        posts.$save($scope.post);
+        $scope.post = null;
+        $scope.addmode = true;
+        $scope.editmode = false;
+    };
+    $scope.tinyMceOpt = {
+        plugins: 'link image code',
+        toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code '
+    };
+
 });
 
 app.factory("Auth", ["$firebaseAuth",
@@ -94,3 +117,9 @@ app.factory("Auth", ["$firebaseAuth",
         return $firebaseAuth();
     }
 ]);
+
+app.filter("Summ",function () {
+    return function (input) {
+        return input.substr(0,20)+"...";
+    }
+});

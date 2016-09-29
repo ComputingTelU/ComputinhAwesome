@@ -509,21 +509,20 @@ NO MORE TABLES!! ;)
     text-align: center;
 }
 
-.card {
-	width: 250px;
-    background-color:whitesmoke;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	text-align: center;
-}
-
 .post{
-    margin: 10px 10px;
-    height: 500px;
+	background-color:whitesmoke;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin: 10px 10px;
+    height: auto;
     width: 350px;
     text-align: left;
     padding: 10px 15px 10px 20px;
     display: inline-block;
+    /*word-break: break-all;*/
+    white-space: normal;
 }
+
+
 
 .center-cropped {
     width: inherit;
@@ -535,8 +534,10 @@ NO MORE TABLES!! ;)
 .blog-section{
 	overflow-x: scroll;
 	overflow-y: hidden;
-	height: 600px;
+	height: auto;
+    padding-bottom: 30px;
 	width: 100%;
+    align-items:initial;
 	white-space: nowrap;
 }
 
