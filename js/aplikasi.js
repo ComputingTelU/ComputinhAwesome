@@ -64,8 +64,8 @@ app.controller('Ctrl',function ($scope,$firebaseArray,$sce,$uibModal) {
 
 });
 
-app.controller('RekruitmenCtrl',function ($scope,$interval) {
-    var deadline = '2017-01-30 18:00';
+app.controller('Event',function ($scope, $interval) {
+    var deadline = '2017-04-16 23:59';
     var deadeline2 = '2017-01-31 12:00';
     $scope.bisa = true;
     var remainingtimes = function (endtime) {
@@ -129,7 +129,7 @@ app.controller('RekruitmenCtrl',function ($scope,$interval) {
     var update = function () {
         $scope.remaining = remainingtimes(deadline);
         $scope.remaining2 = remainingtimes(deadeline2);
-        if ($scope.remaining.total<0 && $scope.remaining2.total<0){
+        if ($scope.remaining.total<0){
             $scope.bisa = false;
         }
     };
